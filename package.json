@@ -1,0 +1,22 @@
+{
+    "name": "book-api-project",
+    "version": "1.0.0",
+    "description": "Fullstack Book API Project",
+    "main": "backend/server.js",
+    "scripts": {
+      "start": "node backend/server.js", 
+      "dev": "concurrently \"npm run server\" \"npm run client\"",
+      "client": "npm start --prefix frontend",
+      "server": "npm run start --prefix backend"
+    },
+    "dependencies": {
+      "concurrently": "^7.0.0" 
+    },
+    "devDependencies": {
+      "eslint": "^8.0.0",
+      "prettier": "^2.0.0"
+    },
+    "author": "Bianca",
+    "license": "MIT"
+  }
+  
