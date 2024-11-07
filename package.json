@@ -6,7 +6,8 @@
         "start": "node backend/server.js",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
         "client": "npm start --prefix frontend",
-        "server": "npm start --prefix backend"
+        "server": "npm start --prefix backend",
+        "deploy": "gh-pages -d build"
     },
     "dependencies": {
         "concurrently": "^7.6.0"
