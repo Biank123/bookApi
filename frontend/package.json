@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://Biank123.github.io/bookApi",
+  "homepage": "https://biank123.github.io/bookApi",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -39,7 +39,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.2.0",
-    "react-scripts": "^5.0.0"
+    "gh-pages": "^6.2.0"
   }
 }
