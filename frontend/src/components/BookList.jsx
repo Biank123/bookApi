@@ -17,7 +17,9 @@ const BookList = () => {
   // Función para obtener los libros con los filtros aplicados
   const getFilteredBooks = (filterParams) => {
     const queryParams = new URLSearchParams(filterParams).toString();
-    fetch(`http://localhost:5000/api/books?${queryParams}`)
+    fetch(
+      // http://localhost:5000/api/books?${queryParams}
+      `https://web-production-ee2d3.up.railway.app/api/books?${queryParams}`)
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => console.error('Error al obtener los libros filtrados:', error));
