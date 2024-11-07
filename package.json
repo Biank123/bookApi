@@ -2,7 +2,7 @@
     "name": "book-api",
     "version": "1.0.0",
     "main": "index.js",
-    "homepage": "https://Biank123.github.io/bookApi",
+    "homepage": "https://biank123.github.io/bookApi/",
     "scripts": {
         "start": "node backend/server.js",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -11,6 +11,7 @@
         "deploy": "gh-pages -d build"
     },
     "dependencies": {
+        "book-api": "file:",
         "concurrently": "^7.6.0"
     }
 }
