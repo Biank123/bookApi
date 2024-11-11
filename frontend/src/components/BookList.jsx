@@ -51,8 +51,12 @@ const BookList = () => {
     getFilteredBooks(filters);
   }, []); // Se ejecuta una sola vez al cargar el componente
 
-  return (
-    <div>
+  return  (
+    <div className="main-container">
+      <div className="filter-container">
+        <h1>Filtrar Libros</h1>
+        <BookFilter onFilter={handleFilterChange} />
+      </div>
       <div className="favorites">
         <h2>Favoritos</h2>
         <ul>
@@ -71,12 +75,7 @@ const BookList = () => {
           )}
         </ul>
       </div>
-  
       <div className="book-list">
-        <h1>Lista de Libros</h1>
-  
-        <BookFilter onFilter={handleFilterChange} />
-  
         <h2>Libros</h2>
         <ul>
           {books.length > 0 ? (
@@ -99,6 +98,6 @@ const BookList = () => {
       </div>
     </div>
   );
-}
+};
 
 export default BookList;

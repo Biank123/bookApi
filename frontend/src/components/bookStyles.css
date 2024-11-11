@@ -2,42 +2,103 @@
 /* Estilos generales para el contenedor */
 body {
   font-family: Arial, sans-serif;
-  background-color: #3e0606;
+  background-color: #e5e2e2;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 /* Contenedor principal */
-div {
-  margin: 20px auto;
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
   padding: 20px;
-  max-width: 900px;
+}
+
+/* Sección de favoritos */
+.favorites {
   background-color: #fff;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Título */
-h1 {
-  font-family: 'Lobster', cursive;  
-  color: #000000;
-  text-align: center;
-  font-size: 2.5em; 
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   margin-bottom: 20px;
-  font-weight: 600; 
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
-  padding: 10px 0;
 }
 
-/* Estilos para el formulario de filtros */
-form {
+.favorites h2 {
+  font-size: 1.8em;
+  color: #000;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
+
+.favorites ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.favorites li {
+  background-color: #0f0e0e62;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.favorites li h2 {
+  font-size: 1.2em;
+  color: #fff;
+  margin: 0;
+}
+
+.favorites li p {
+  color: #fff;
+  margin: 5px 0;
+}
+
+.favorites button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  background-color: #19191a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.favorites button:hover {
+  background-color: #efeded;
+  color: rgb(0, 0, 0);
+}
+
+/* Sección del formulario de filtro */
+.filter-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.filter-container form {
   display: grid;
   gap: 10px;
-  margin-bottom: 20px;
 }
 
-input {
+.filter-container input {
   padding: 8px;
   font-size: 1rem;
   border: 1px solid #ddd;
@@ -46,15 +107,7 @@ input {
   box-sizing: border-box;
 }
 
-input[type="number"] {
-  -webkit-appearance: none; /* Safari y Chrome */
-  -moz-appearance: textfield; /* Firefox */
-  appearance: none; /* Estándar */
-  padding: 8px;
-  border: 1px solid #ccc;
-}
-
-button {
+.filter-container button {
   padding: 10px 15px;
   font-size: 1rem;
   background-color: #19191a;
@@ -65,28 +118,49 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #882a2a;
-  color: rgb(255, 255, 255);
+.filter-container button:hover {
+  background-color: #023465;
 }
 
-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
+.filter-container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8em;
+  color: #000;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
+/* Contenedor de la lista de libros */
+.book-list {
+  flex: 2;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-list h2 {
+  font-size: 2em;
+  color: #000;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
 
 /* Estilos para la lista de libros */
-ul {
+.book-list ul {
   list-style-type: none;
   padding: 0;
-  display: grid; /* Usamos grid para las cartas */
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas por defecto */
-  gap: 20px; /* Espacio entre las cartas */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-li {
-  background-color: #0f0e0e62;
+.book-list li {
+  background-color: #385468;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -95,35 +169,48 @@ li {
   align-items: center;
 }
 
-li:hover{
+.book-list li:hover {
   transform: scale(1.05);
   transition: transform 0.5s ease-in-out;
 }
 
-li h2 {
+.book-list li h2 {
   font-size: 1.5em;
-  color: #333;
+  color: #fff;
   margin: 0;
 }
 
-/* Estilo de la imagen */
-li img {
-  width: 250px; /* Ajusta el tamaño de la imagen */
-  height: 350px; /* Asegura que todas las imágenes tengan el mismo tamaño */
-  object-fit: cover; /* Mantiene las proporciones de la imagen */
+.book-list li img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
   border-radius: 8px;
   margin: 10px 0;
 }
 
-/* Estilos para los textos */
-li p {
-  color: #000000;
+.book-list li p {
+  color: #c4c2c2;
   margin: 5px 0;
 }
 
-/* Estilo para el mensaje cuando no se encuentran libros */
-p {
-  color: #888;
+.book-list button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #19191a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.book-list button:hover {
+  background-color: #efeded;
+  color: rgb(0, 0, 0);
+}
+
+/* Estilo del mensaje cuando no se encuentran libros */
+.book-list p {
   text-align: center;
 }
 
@@ -133,15 +220,19 @@ input:focus {
   outline: none;
 }
 
-/* Responsividad: ajustamos el número de columnas según el tamaño de la pantalla */
+/* Responsividad */
 @media (max-width: 1024px) {
-  ul {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+  .book-list ul {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  ul {
-    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .book-list ul {
+    grid-template-columns: 1fr;
   }
 }
